@@ -1,0 +1,70 @@
+﻿@page
+@model BOTCDatabase.Pages.Roles.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@ViewData["Name"]</h1>
+
+<p>
+    @* bruh *@
+    <a asp-page="brother">Add Character</a>-
+    <!-- <a asp-page="Create">Add Character</a>-->
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th width="100px">
+                @Html.DisplayNameFor(model => model.Roles[0].ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles[0].FirstNightOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles[0].OtherNightOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles[0].Description)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Roles) {
+        <tr style="height: 80px; position: relative">
+                <td style="overflow: hidden; position: relative">
+                    <img src="@Html.DisplayFor(modelItem => item.ImagePath)"
+                    alt="Icon for role" style="position:absolute; height: 110px; top: -15px; left: -10px" />
+            </td>
+            <td>
+                <strong class="@Html.DisplayFor(modelItem => item.Type)">@Html.DisplayFor(modelItem => item.Name)</strong>
+            </td>
+            <td>
+                <strong class="@Html.DisplayFor(modelItem => item.Type)">@Html.DisplayFor(modelItem => item.Type)</strong>
+            </td>
+            <td>
+                @(item.FirstNightOrder < 0 ? "N/A" : Html.DisplayFor(modelItem => item.FirstNightOrder))
+            </td>
+            <td>
+                @(item.OtherNightOrder < 0 ? "N/A" : Html.DisplayFor(modelItem => item.OtherNightOrder))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

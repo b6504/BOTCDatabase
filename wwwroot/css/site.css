@@ -1,0 +1,41 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.Townsfolk {
+    color: rgb(0, 96, 206);
+}
+.Outsider {
+    color: rgb(0, 167, 153);
+}
+.Minion {
+    color: rgb(177, 100, 0);
+}
+.Demon {
+    color: rgb(165, 0, 0);
+}
+.Traveller {
+    color: rgb(130, 0, 206);
+}
+.Fabled {
+    color: rgb(206, 141, 0);
+}

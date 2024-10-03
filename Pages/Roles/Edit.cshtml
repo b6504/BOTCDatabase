@@ -1,0 +1,257 @@
+﻿@page
+@model BOTCDatabase.Pages.Roles.EditModel
+@using BOTCDatabase.Models
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Role</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Role.Id" />
+            <div class="form-group">
+                <!-- NAME -->
+                <label asp-for="Role.Name" class="control-label"></label>
+                <input asp-for="Role.Name" class="form-control" />
+                <span asp-validation-for="Role.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <!-- IMAGE SELECTION PART (LONG) -->
+                <label>Select an Icon</label>
+                <div style="display: inline-flex;">
+                    <div class="image-selection" \
+                         style="display:block; width: 250px; border: ">
+                        <span style="color:blue;">Town</span>
+                    </div>
+                    <div class="image-selection" \
+                         style="display:block; width: 250px; border: ">
+                        <span style="color:blue;">Outsider</span>
+                    </div>
+                    <div class="image-selection" \
+                         style="display:block; width: 250px; border:">
+                        <span style="color:red;">Minion</span>
+                    </div>
+                    <div class="image-selection" \
+                         style="display:block; width: 250px; border: ">
+                        <span style="color:red;">Demon</span>
+                    </div>
+                    <div class="image-selection" \
+                         style="display:block; width: 250px; border: ">
+                        <span style="color:purple;">Traveller</span>
+                    </div>
+                    <div class="image-selection" \
+                         style="display:block; width: 250px; border: ">
+                        <span style="color:darkorange;">Fabled</span>
+                    </div>
+
+                </div>
+                <div style="display: inline-flex;">
+
+                    <div class="image-selection" \
+                         style="flex-wrap: wrap;overflow-y: auto; max-height: 300px; width: 250px; border: 1px solid">
+
+                        @foreach (var image in Model.TownsfolkImages)
+                        {
+                            <label>
+                                <input type="radio"
+                                       id="img_@image"
+                                       name="Role.ImagePath"
+                                       value="/images/icons/Townsfolk/@image"
+                                @(Model.Role.ImagePath == $"/images/icons/Townsfolk/{image}" ? "checked" : "") />
+                                <span for="img_@image" style="cursor: pointer; color:blue;">@image</span>
+                                <img src="/images/icons/Townsfolk/@image"
+                                     alt="role icon"
+                                     for="img_@image"
+                                     style="cursor: pointer;"
+                                     width="200"
+                                     height="200" />
+                            </label>
+                        }
+                    </div>
+                    <div class="image-selection" \
+                         style="flex-wrap: wrap;overflow-y: auto; max-height: 300px; width: 250px; border: 1px solid">
+
+                        @foreach (var image in Model.OutsidersImages)
+                        {
+                            <label>
+                                <input type="radio"
+                                       id="img_@image"
+                                       name="Role.ImagePath"
+                                       value="/images/icons/Outsiders/@image"
+                                @(Model.Role.ImagePath == $"/images/icons/Outsiders/{image}" ? "checked" : "") />
+                                <span for="img_@image" style="cursor: pointer; color:blue;">@image</span>
+                                <img src="/images/icons/Outsiders/@image"
+                                     alt="role icon"
+                                     for="img_@image"
+                                     style="cursor: pointer;"
+                                     width="200"
+                                     height="200" />
+                            </label>
+                        }
+                    </div>
+                    <div class="image-selection" \
+                         style="flex-wrap: wrap;overflow-y: auto; max-height: 300px; width: 250px; border: 1px solid">
+
+                        @foreach (var image in Model.MinionsImages)
+                        {
+                            <label>
+                                <input type="radio"
+                                       id="img_@image"
+                                       name="Role.ImagePath"
+                                       value="/images/icons/Minions/@image"
+                                @(Model.Role.ImagePath == $"/images/icons/Minions/{image}" ? "checked" : "") />
+                                <span for="img_@image" style="cursor: pointer; color:red;">@image</span>
+                                <img src="/images/icons/Minions/@image"
+                                     alt="role icon"
+                                     for="img_@image"
+                                     style="cursor: pointer;"
+                                     width="200"
+                                     height="200" />
+                            </label>
+                        }
+                    </div>
+                    <div class="image-selection" \
+                         style="flex-wrap: wrap;overflow-y: auto; max-height: 300px; width: 250px; border: 1px solid">
+
+                        @foreach (var image in Model.DemonsImages)
+                        {
+                            <label>
+                                <input type="radio"
+                                       id="img_@image"
+                                       name="Role.ImagePath"
+                                       value="/images/icons/Demons/@image"
+                                @(Model.Role.ImagePath == $"/images/icons/Demons/{image}" ? "checked" : "") />
+                                <span for="img_@image" style="cursor: pointer; color:red;">@image</span>
+                                <img src="/images/icons/Demons/@image"
+                                     alt="role icon"
+                                     for="img_@image"
+                                     style="cursor: pointer;"
+                                     width="200"
+                                     height="200" />
+                            </label>
+                        }
+                    </div>
+                    <div class="image-selection" \
+                         style="flex-wrap: wrap;overflow-y: auto; max-height: 300px; width: 250px; border: 1px solid">
+
+                        @foreach (var image in Model.TravellersImages)
+                        {
+                            <label>
+                                <input type="radio"
+                                       id="img_@image"
+                                       name="Role.ImagePath"
+                                       value="/images/icons/Travellers/@image"
+                                @(Model.Role.ImagePath == $"/images/icons/Travellers/{image}" ? "checked" : "") />
+                                <span for="img_@image" style="cursor: pointer; color:purple;">@image</span>
+                                <img src="/images/icons/Travellers/@image"
+                                     alt="role icon"
+                                     for="img_@image"
+                                     style="cursor: pointer;"
+                                     width="200"
+                                     height="200" />
+                            </label>
+                        }
+                    </div>
+                    <div class="image-selection" \
+                         style="flex-wrap: wrap;overflow-y: auto; max-height: 300px; width: 250px; border: 1px solid">
+
+                        @foreach (var image in Model.FabledImages)
+                        {
+                            <label>
+                                <input type="radio"
+                                       id="img_@image"
+                                       name="Role.ImagePath"
+                                       value="/images/icons/Fabled/@image"
+                                @(Model.Role.ImagePath == $"/images/icons/Fabled/{image}" ? "checked" : "") />
+                                <span for="img_@image" style="cursor: pointer; color:darkorange;">@image</span>
+                                <img src="/images/icons/Fabled/@image"
+                                     alt="role icon"
+                                     for="img_@image"
+                                     style="cursor: pointer;"
+                                     width="200"
+                                     height="200" />
+                            </label>
+                        }
+                    </div>
+                </div>
+                <span asp-validation-for="Role.ImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <!-- Role Type -->
+                <label>Character Team</label>
+                @foreach (var charType in Enum.GetValues(typeof(CharacterType)).Cast<CharacterType>())
+                {
+                    <div class="form-check">
+                        <input type="radio"
+                               id="type_@charType"
+                               name="Character Type"
+                               value="@charType"
+                               class="form-check-input"
+                        @(Model.Role.Type == charType ? "checked" : "") />
+                        <label for="type_@charType"
+                               class="form-check-label"
+                               style="cursor: pointer; font-weight:bold">
+                            @charType
+                        </label>
+                    </div>
+                }
+                <span asp-validation-for="Role.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <!-- Night 1 -->
+                <label asp-for="Role.FirstNightOrder" class="control-label"></label>
+                <input asp-for="Role.FirstNightOrder" class="form-control" />
+                <span asp-validation-for="Role.FirstNightOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role.FirstNightReminder" class="control-label"></label>
+                <input asp-for="Role.FirstNightReminder" class="form-control" />
+                <span asp-validation-for="Role.FirstNightReminder" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <!-- Other Nights -->
+                <label asp-for="Role.OtherNightReminder" class="control-label"></label>
+                <input asp-for="Role.OtherNightReminder" class="form-control" />
+                <span asp-validation-for="Role.OtherNightReminder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role.OtherNightOrder" class="control-label"></label>
+                <input asp-for="Role.OtherNightOrder" class="form-control" />
+                <span asp-validation-for="Role.OtherNightOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role.Description" class="control-label"></label>
+                <input asp-for="Role.Description" class="form-control" />
+                <span asp-validation-for="Role.Description" class="text-danger"></span>
+            </div>
+            <!-- Some uneeded code until future inspection
+            <div class="form-group">
+                <label asp-for="Role.Effects" class="control-label"></label>
+                <input asp-for="Role.Effects" class="form-control" />
+                <span asp-validation-for="Role.Effects" class="text-danger"></span>
+            </div>
+            -->
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div style="color:darkred">
+    <a asp-page="./Delete" asp-route-id="@Model.Role.Id">Delete </a>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

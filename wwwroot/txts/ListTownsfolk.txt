@@ -1,0 +1,67 @@
+Alchemist
+Alsaahir
+Amnesiac
+Artist
+Atheist
+Balloonist
+Banshee
+Bounty Hunter
+Cannibal
+Chambermaid
+Chef
+Choirboy
+Clockmaker
+Courtier
+Cult Leader
+Dreamer
+Empath
+Engineer
+Exorcist
+Farmer
+Fisherman
+Flowergirl
+Fool
+Fortune Teller
+Gambler
+General
+Gossip
+Grandmother
+High Priestess
+Huntsman
+Innkeeper
+Investigator
+Juggler
+King
+Knight
+Librarian
+Lycanthrope
+Magician
+Mathematician
+Mayor
+Minstrel
+Monk
+Nightwatchman
+Noble
+Oracle
+Pacifist
+Philosopher
+Pixie
+Poppy Grower
+Preacher
+Professor
+Ravenkeeper
+Sage
+Sailor
+Savant
+Seamstress
+Shugenja
+Slayer
+Snake Charmer
+Soldier
+Steward
+Tea Lady
+Town Crier
+Undertaker
+Village Idiot
+Virgin
+Washerwoman
